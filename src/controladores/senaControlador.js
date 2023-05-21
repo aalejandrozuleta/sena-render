@@ -13,5 +13,9 @@ controlador.zona_Index = (consulta,respuesta)=> {
     respuesta.render ('index')
 }
 
+controlador.zona_instructores = (consulta,respuesta)=> {
+    respuesta.render('instructores')
+}
+
 
 module.exports = controlador

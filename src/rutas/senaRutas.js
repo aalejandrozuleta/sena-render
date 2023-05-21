@@ -8,6 +8,7 @@ const cargaImagenes = multer({
 const senaControlador = require('../controladores/senaControlador')
 
 rutas.get ('/',senaControlador.zona_Index)
+rutas.get('/instructores',senaControlador.zona_instructores)
 
 
 module.exports = rutas
