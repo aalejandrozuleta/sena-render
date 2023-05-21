@@ -37,3 +37,36 @@
         }
     }
 }
+
+
+// fomularios 
+
+
+.opciones {
+    height: 500px;
+    width: 400px;
+    @include grid-center;
+    margin: 40px auto;
+    @include border;
+
+    background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+
+    .bloqueOpciones {
+        width: 400px;
+        margin: 20px;
+        text-align: center;
+
+        display: grid;
+        grid-template-rows: repeat(2,50%);
+
+        a{
+            margin-top: 10px;
+            text-decoration: none;
+            text-transform: capitalize;
+
+            &:hover {
+                color: $hover;
+            }   
+        }
+    }
+}

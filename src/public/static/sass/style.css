@@ -129,4 +129,30 @@ body.dark span {
   padding: 0 10px;
 }
 
+.opciones {
+  height: 500px;
+  width: 400px;
+  display: grid;
+  place-items: center;
+  place-content: center;
+  margin: 40px auto;
+  border-radius: 40px;
+  background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+}
+.opciones .bloqueOpciones {
+  width: 400px;
+  margin: 20px;
+  text-align: center;
+  display: grid;
+  grid-template-rows: repeat(2, 50%);
+}
+.opciones .bloqueOpciones a {
+  margin-top: 10px;
+  text-decoration: none;
+  text-transform: capitalize;
+}
+.opciones .bloqueOpciones a:hover {
+  color: rgb(47, 199, 245);
+}
+
 /*# sourceMappingURL=style.css.map */
