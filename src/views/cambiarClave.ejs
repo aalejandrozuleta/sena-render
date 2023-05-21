@@ -1,0 +1,17 @@
+<%- include ('partes/_default.ejs') -%>
+    <title>Document</title>
+</head>
+<body>
+    <%- include ('partes/_navegacion.ejs') -%>
+    <section class="formularios">
+        <h4>cambiar clave</h4>
+        <form action="/cambiarClave" method="post" class="formulario">
+            <input class="controls" type="number" name="cedula" id="cedula" placeholder="ingrese su cedula" required>
+            <input class="controls" type="email" name="correo" id="correo" placeholder="ingrese su correo" required>
+            <input class="controls" type="password" name="contrasena" id="contrasena" placeholder="ingrese su contraseña" required>
+            <input class="boton_controles" type="submit"value="cambiar">
+        </form>
+        <a href="/">volver al Inicio</a>
+    </section>
+</body>
+</html>

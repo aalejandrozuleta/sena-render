@@ -21,6 +21,14 @@ controlador.zona_inicarInstructores = (consulta, respuesta) => {
     respuesta.render('iniciarInstructor')
 };
 
+controlador.zona_eliminarUuario = (consulta,respuesta)=> {
+    respuesta.render('eliminarUsuario')
+}
+
+controlador.zona_cambiarClave = (consulta,respuesta)=> {
+    respuesta.render('CambiarClave')
+}
+
 
 controlador.zona_registroInstructor = (consulta, respuesta) => {
     consulta.getConnection((error, conexion) => {
@@ -85,9 +93,37 @@ controlador.zona_iniciarInstructor = ((consulta,respuesta)=>{
 });
 
 
+controlador.zona_eliminar = ((consulta,respuesta)=> {
+    let correo = consulta.body.correo;
+    let contrasena = consulta.body.contrasena;
+    let id = consulta.body.cedula;
+
+    consulta.getConnection((error,conexion)=>{
+        conexion.query('delete from registro where correo = ? and contrasena = ? and cedula = ?',[correo,contrasena,id],(error,eliminar)=>{
+            respuesta.redirect('/')
+        })
+    })
+})
 
 
-// fin insructore
+controlador.zona_cambiarClaves = ((consulta, respuesta) => {
+    let correo = consulta.body.correo;
+    let id = consulta.body.cedula;
+    let contrasena = consulta.body.contrasena;
+
+    consulta.getConnection((error, conexion) => {
+        conexion.query('SELECT * FROM registro WHERE correo = ? AND cedula = ?', [correo, id], (error, resultadoConsulta) => {
+            if (error) {
+                console.log(error);
+            } else {
+                conexion.query('UPDATE registro SET contrasena = ? WHERE correo = ? AND cedula = ?', [contrasena, correo, id], (error, resultadoActualizacion) => {
+                    respuesta.redirect("/");
+                });
+            }
+        });
+    });
+});
+// fin insructores
 
 
 module.exports = controlador;
