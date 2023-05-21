@@ -1,9 +1,3 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: content-box;
-}
-
 body {
   font-family: "Open Sans", sans-serif;
   font-family: "Roboto", sans-serif;
@@ -22,17 +16,85 @@ body.dark h1, body.dark h2, body.dark h3, body.dark h4, body.dark h5, body.dark 
   color: rgb(255, 255, 255);
 }
 body.dark a {
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
 }
 body.dark span {
   color: rgb(255, 255, 255);
 }
-body.dark .navBar .menu {
-  background-color: #fff;
-  border-radius: 20px;
+
+.modoNoche {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  justify-content: flex-start;
 }
-body.dark .navBar .menu a:hover {
-  color: #000;
+.modoNoche #toggle {
+  display: none;
+  margin-left: 10px;
+}
+.modoNoche #label_toggle {
+  position: absolute;
+  font-size: 2.5em;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.navegacionPrincipal {
+  width: 100%;
+  height: 60px;
+  margin-top: 30px;
+}
+.navegacionPrincipal .menu {
+  display: grid;
+  place-items: center;
+  place-content: center;
+  grid-template-columns: repeat(4, 20%);
+  grid-template-rows: 40px;
+  margin: 10px 0 0 10px;
+}
+.navegacionPrincipal .menu li {
+  list-style: none;
+  width: 100%;
+  height: 100%;
+  border-radius: 40px;
+  display: grid;
+  place-items: center;
+  grid-template-rows: 40px;
+}
+.navegacionPrincipal .menu li:hover .subMenu {
+  visibility: visible;
+}
+.navegacionPrincipal .menu li:hover {
+  background-color: rgb(47, 199, 245);
+}
+.navegacionPrincipal .menu li a {
+  text-align: center;
+  text-decoration: none;
+}
+.navegacionPrincipal .menu li a:hover {
+  color: rgb(255, 0, 0);
+}
+.navegacionPrincipal .menu li .subMenu {
+  visibility: hidden;
+  margin-top: 2px;
+  display: grid;
+  grid-template-rows: auto;
+  width: 120%;
+  height: auto;
+  background-color: rgb(70, 70, 70);
+  border-radius: 10px;
+}
+.navegacionPrincipal .menu li .subMenu li {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  border-radius: 40px;
+  display: grid;
+  place-items: center;
+  place-content: center;
+}
+.navegacionPrincipal .menu li .subMenu li a {
+  color: rgb(255, 255, 255);
 }
 
 /*# sourceMappingURL=style.css.map */

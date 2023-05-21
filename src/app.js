@@ -29,7 +29,9 @@ app.use(express.urlencoded({
 app.use('/',senaRutas)
 
 
-app.use('/public', express.static(__dirname + '/public'))
+app.use('/public', express.static(__dirname + '/public'));
+app.use('/node_modules', express.static(path.join(__dirname, 'node_modules')));
+
 
 app.listen(app.get('port'), () => {
     console.log("Servidor en el puerto 5000")
