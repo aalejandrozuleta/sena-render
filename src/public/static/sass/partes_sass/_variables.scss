@@ -1,0 +1,37 @@
+$colorPrincipal: rgb(255, 255, 255);
+$colorLetras: rgb(0, 0, 0);
+$hover: rgb(47, 199, 245);
+$oscuro: rgb(0, 0, 0);
+$letrasOscuro: rgba(255, 255, 255);
+$sobrePuesto: rgb(70, 70, 70);
+$sobreLetras: rgb(255, 0, 0);
+
+@mixin grid-center {
+	display: grid;
+	place-items: center;
+	place-content: center;
+}
+
+@mixin border {
+	border-radius: 40px;
+}
+
+// fin de variables
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: content-box;
+}
+
+body {
+	font-family: "Open Sans", sans-serif;
+	font-family: "Roboto", sans-serif;
+
+    background-color: $colorPrincipal;
+    color: $colorLetras;
+
+    a{
+        color: $colorLetras;
+    }
+}

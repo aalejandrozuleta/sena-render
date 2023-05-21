@@ -1,0 +1,22 @@
+body.dark {
+    background-color: $oscuro;
+    color: $letrasOscuro;
+    h1, h2, h3, h4, h5, h6 {
+        color:$letrasOscuro;
+    }
+    & a{
+        color:$colorLetras;
+    }
+    span {
+        color: $letrasOscuro;
+    }
+    .navBar .menu  {
+        background-color: #fff;
+        border-radius:20px ;
+
+        a:hover {
+            color: #000;
+        }
+    }
+
+}

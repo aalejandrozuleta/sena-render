@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: content-box;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-family: "Roboto", sans-serif;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+}
+body a {
+  color: rgb(0, 0, 0);
+}
+
+body.dark {
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+}
+body.dark h1, body.dark h2, body.dark h3, body.dark h4, body.dark h5, body.dark h6 {
+  color: rgb(255, 255, 255);
+}
+body.dark a {
+  color: rgb(0, 0, 0);
+}
+body.dark span {
+  color: rgb(255, 255, 255);
+}
+body.dark .navBar .menu {
+  background-color: #fff;
+  border-radius: 20px;
+}
+body.dark .navBar .menu a:hover {
+  color: #000;
+}
+
+/*# sourceMappingURL=style.css.map */
