@@ -83,6 +83,7 @@ body.dark span {
   height: auto;
   background-color: rgb(70, 70, 70);
   border-radius: 10px;
+  z-index: 1;
 }
 .navegacionPrincipal .menu li .subMenu li {
   width: 100%;
@@ -95,6 +96,37 @@ body.dark span {
 }
 .navegacionPrincipal .menu li .subMenu li a {
   color: rgb(255, 255, 255);
+}
+
+#presentacion {
+  width: 100%;
+  height: 200px;
+  display: grid;
+  place-items: center;
+  place-content: center;
+  grid-template-rows: repeat(2, 50%);
+  text-align: center;
+}
+
+#sobreSena {
+  width: 100%;
+  height: 300px;
+}
+#sobreSena .informacion {
+  display: grid;
+  place-items: center;
+  place-content: center;
+  grid-template-columns: repeat(2, 50%);
+  grid-template-rows: 166.6666666667px;
+}
+#sobreSena .informacion img {
+  width: 40%;
+  height: 80%;
+  border-radius: 40px;
+}
+#sobreSena .informacion p {
+  text-align: center;
+  padding: 0 10px;
 }
 
 /*# sourceMappingURL=style.css.map */
