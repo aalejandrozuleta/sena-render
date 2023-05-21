@@ -13,21 +13,54 @@ controlador.zona_Index = (consulta, respuesta) => {
 	respuesta.render("index");
 };
 
+//instructores
 controlador.zona_instructores = (consulta, respuesta) => {
 	respuesta.render("instructores");
 };
 
-controlador.zona_inicarInstructores = (consulta, respuesta) => {
-    respuesta.render('iniciarInstructor')
+controlador.zona_inicarUsuario = (consulta, respuesta) => {
+    respuesta.render('iniciarusuarios')
 };
 
+//aprendiz
+
+controlador.zona_aprendiz = (consulta,respuesta)=> {
+    respuesta.render('aprendiz')
+};
+
+
+controlador.zona_registroAprendiz = (consulta, respuesta) => {
+    consulta.getConnection((error, conexion) => {
+        if (error) {
+            respuesta.json(error);
+        }
+        conexion.query('SELECT * FROM cursos', (error, cursos) => {
+            if (error) {
+                respuesta.json(error);
+            }
+            respuesta.render('registrarAprendiz', {
+                cursos: cursos
+            });
+        });
+    });
+};
+
+
+
+
+
+
+
+
+//general
 controlador.zona_eliminarUuario = (consulta,respuesta)=> {
     respuesta.render('eliminarUsuario')
-}
+};
+
 
 controlador.zona_cambiarClave = (consulta,respuesta)=> {
     respuesta.render('CambiarClave')
-}
+};
 
 
 controlador.zona_registroInstructor = (consulta, respuesta) => {
@@ -69,7 +102,7 @@ controlador.zona_crearInstructor = ((consulta,respuesta)=> {
     });
 });
 
-controlador.zona_iniciarInstructor = ((consulta,respuesta)=>{
+controlador.zona_iniciar = ((consulta,respuesta)=>{
     let correo =consulta.body.correo
     let contrasena =consulta.body.contrasena
     console.log(correo);
@@ -86,7 +119,7 @@ controlador.zona_iniciarInstructor = ((consulta,respuesta)=>{
             }
             else {
                 console.log(error);
-                respuesta.redirect("/inicarInstructor")
+                respuesta.redirect("/iniciar")
             }
         })
     })
@@ -124,6 +157,22 @@ controlador.zona_cambiarClaves = ((consulta, respuesta) => {
     });
 });
 // fin insructores
+
+// aprendiz
+
+controlador.zona_registrarAprendiz = ((consulta,respuesta)=> {
+    let registrarse = consulta.body
+    console.log(registrarse);
+    consulta.getConnection((error,conexion)=>{
+        conexion.query ('insert into registro set ?, tipoUsuarios_fk = 2 ',[registrarse],(error,registro)=>{
+            respuesta.redirect("/")
+        });
+    });
+});
+
+
+
+
 
 
 module.exports = controlador;

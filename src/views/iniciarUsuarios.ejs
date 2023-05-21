@@ -4,13 +4,13 @@
 <body>
     <%- include ('partes/_navegacion.ejs') -%>
     <section class="formularios">
-        <h4>inciar sesion Instructor</h4>
+        <h4>inciar sesion </h4>
         <form action="/iniciarSesion" method="post" class="formulario">
             <input class="controls" type="email" name="correo" id="correo" placeholder="ingrese su correo" required>
             <input class="controls" type="password" name="contrasena" id="contrasena" placeholder="ingrese su contraseña" required>
             <input class="boton_controles" type="submit"value="Iniciar">
         </form>
-        <a href="/registroInstructor">No tengo cuenta</a>
+        <a href="/">No tengo cuenta</a>
     </section>
 </body>
 </html>
