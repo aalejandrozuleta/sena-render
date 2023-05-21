@@ -93,6 +93,14 @@
         row-gap: 10px;
     }
 
+    .seleccionador{
+        width: 70%;
+        height: 30px;
+        border: none;
+        text-align: center;
+        @include border;
+    }
+
     .controls {
         width: 70%;
         height: 30px;

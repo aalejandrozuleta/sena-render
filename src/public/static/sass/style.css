@@ -177,6 +177,13 @@ body.dark span {
   grid-template-columns: 400px;
   row-gap: 10px;
 }
+.formularios .seleccionador {
+  width: 70%;
+  height: 30px;
+  border: none;
+  text-align: center;
+  border-radius: 40px;
+}
 .formularios .controls {
   width: 70%;
   height: 30px;

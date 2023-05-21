@@ -11,7 +11,18 @@
             <input class="controls" type="text" name="apellido" id="apellido" placeholder="ingrese su apellido" required>
             <input class="controls" type="number" name="cedula" id="cedula" placeholder="ingrese su cedula" required>
             <input class="controls" type="email" name="correo" id="correo" placeholder="ingrese su correo" required>
-            <input class="controls" type="tetx" name="curso" id="curso" placeholder="ingrese su curso">
+            <select name="curso_fk" id="curso_fk" class="seleccionador">
+                <option class="opciones">Ingrese su curso</option>
+                <% for (let i = 0; i < cursos.length; i++) { %>
+                    <option class="opciones" value="<%= cursos[i].id %>"><%= cursos[i].curso %></option>
+                <% } %>
+            </select>
+            <select name="horarios_fk" class="seleccionador">
+                <option value="" class="opciones">Seleccione un horario</option>
+                <% for (let i = 0; i < horarios.length; i++) { %>
+                <option class="opciones" value="<%= horarios[i].id %>"><%= horarios[i].dia %> - <%= horarios[i].hora %></option>
+                <% } %>
+            </select>
             <input class="controls" type="password" name="contrasena" id="contrasena" placeholder="ingrese su contraseña" required>
             <input class="boton_controles" type="submit"value="Registrar">
         </form>

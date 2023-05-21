@@ -11,5 +11,5 @@ rutas.get ('/',senaControlador.zona_Index)
 rutas.get('/instructores',senaControlador.zona_instructores)
 rutas.get('/registroInstructor',senaControlador.zona_registroInstructor)
 
-
+rutas.post('/registrarInstructor',senaControlador.zona_crearInstructor)
 module.exports = rutas
