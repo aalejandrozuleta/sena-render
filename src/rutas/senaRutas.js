@@ -15,6 +15,7 @@ rutas.get('/registroInstructor',senaControlador.zona_registroInstructor)
 rutas.get('/iniciar',senaControlador.zona_inicarUsuario)
 rutas.get('/eliminarUsuario',senaControlador.zona_eliminarUuario)
 rutas.get ('/cambiarClave',senaControlador.zona_cambiarClave)
+rutas.get ('/retirar',senaControlador.zona_retirar)
 //aprendiz
 rutas.get('/aprendiz',senaControlador.zona_aprendiz)
 rutas.get('/registroAprendiz',senaControlador.zona_registroAprendiz)
@@ -22,6 +23,7 @@ rutas.get('/registroAprendiz',senaControlador.zona_registroAprendiz)
 //instructores post
 rutas.post('/registrarInstructor',senaControlador.zona_crearInstructor)
 rutas.post('/eliminarInstructor',senaControlador.zona_eliminar)
+rutas.post('/eliminarAprendiz',senaControlador.zona_eliminarAprendiz)
 
 // aprendiz post
 rutas.post('/registrarAprendiz',senaControlador.zona_registrarAprendiz)

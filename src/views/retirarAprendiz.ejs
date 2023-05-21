@@ -1,0 +1,23 @@
+<%- include ('partes/_default.ejs') -%>
+    <title>Document</title>
+</head>
+<body>
+    <%- include ('partes/_navegacion.ejs') -%>
+
+    <section class="formularios">
+        <h4>Eliminar Usuario</h4>
+        <form action="/eliminarAprendiz" method="post" class="formulario">
+            <input class="controls" type="number" name="cedulaInstructor" id="cedulaInstructor" placeholder="ingrese su cedula instructor" required>
+            <input class="controls" type="email" name="correoInstructor" id="correoInstructor" placeholder="ingrese su correo Instructor" required>
+            <input class="controls" type="password" name="contrasenaInstructor" id="contrasenaInstructor" placeholder="ingrese su contraseña Instructor" required>
+
+            <input class="controls" type="number" name="cedulaAprendiz" id="cedulaInstructorAprendiz" placeholder="ingrese la cedula del Aprendiz" required>
+
+            <input class="controls" type="email" name="correoAprendiz" id="correoAprendiz" placeholder="ingrese el correo del Aprendiz" required>
+
+            <input class="boton_controles" type="submit"value="eliminar Aprendiz">
+        </form>
+        <a href="/">No tengo cuenta</a>
+    </section>
+</body>
+</html>

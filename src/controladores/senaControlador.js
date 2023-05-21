@@ -19,15 +19,18 @@ controlador.zona_instructores = (consulta, respuesta) => {
 };
 
 controlador.zona_inicarUsuario = (consulta, respuesta) => {
-    respuesta.render('iniciarusuarios')
+    respuesta.render('iniciarusuarios');
+};
+
+controlador.zona_retirar = (consulta, respuesta) => {
+    respuesta.render('retirarAprendiz');
 };
 
 //aprendiz
 
 controlador.zona_aprendiz = (consulta,respuesta)=> {
-    respuesta.render('aprendiz')
+    respuesta.render('aprendiz');
 };
-
 
 controlador.zona_registroAprendiz = (consulta, respuesta) => {
     consulta.getConnection((error, conexion) => {
@@ -45,21 +48,14 @@ controlador.zona_registroAprendiz = (consulta, respuesta) => {
     });
 };
 
-
-
-
-
-
-
-
 //general
 controlador.zona_eliminarUuario = (consulta,respuesta)=> {
-    respuesta.render('eliminarUsuario')
+    respuesta.render('eliminarUsuario');
 };
 
 
 controlador.zona_cambiarClave = (consulta,respuesta)=> {
-    respuesta.render('CambiarClave')
+    respuesta.render('CambiarClave');
 };
 
 
@@ -93,33 +89,33 @@ controlador.zona_registroInstructor = (consulta, respuesta) => {
 
 // instructores
 controlador.zona_crearInstructor = ((consulta,respuesta)=> {
-    let registrarse = consulta.body
+    let registrarse = consulta.body;
     console.log(registrarse);
     consulta.getConnection((error,conexion)=>{
         conexion.query ('insert into registro set ?, tipoUsuarios_fk = 1 ',[registrarse],(error,registro)=>{
-            respuesta.redirect("/")
+            respuesta.redirect("/");
         });
     });
 });
 
 controlador.zona_iniciar = ((consulta,respuesta)=>{
-    let correo =consulta.body.correo
-    let contrasena =consulta.body.contrasena
+    let correo =consulta.body.correo;
+    let contrasena =consulta.body.contrasena;
     console.log(correo);
     console.log(contrasena);
     consulta.getConnection((error,conexion)=>{
         conexion.query('select * from registro where correo=? and contrasena=?',[correo, contrasena],(error,registro)=>{
             console.log(registro)
             if (registro.length !== 0) {
-                let correo = consulta.body.correo
-                store.put('correo',correo)
+                let correo = consulta.body.correo;
+                store.put('correo',correo);
                 console.log(store.get('correo'));
                 console.log(error);
-                respuesta.redirect("/")
+                respuesta.redirect("/");
             }
             else {
                 console.log(error);
-                respuesta.redirect("/iniciar")
+                respuesta.redirect("/iniciar");
             }
         })
     })
@@ -133,7 +129,7 @@ controlador.zona_eliminar = ((consulta,respuesta)=> {
 
     consulta.getConnection((error,conexion)=>{
         conexion.query('delete from registro where correo = ? and contrasena = ? and cedula = ?',[correo,contrasena,id],(error,eliminar)=>{
-            respuesta.redirect('/')
+            respuesta.redirect('/');
         })
     })
 })
@@ -156,16 +152,38 @@ controlador.zona_cambiarClaves = ((consulta, respuesta) => {
         });
     });
 });
+
+
+controlador.zona_eliminarAprendiz = ((consulta, respuesta) => {
+    let correoInstructor = consulta.body.correoInstructor;
+    let idInstructor = consulta.body.cedulaInstructor;
+    let contrasenaInstructor = consulta.body.contrasenaInstructor;
+    let correoAprendiz = consulta.body.correoAprendiz;
+    let idAprendiz = consulta.body.cedulaAprendiz;
+
+    consulta.getConnection((error, conexion) => {
+        conexion.query('SELECT * from registro WHERE correo = ? AND cedula = ? AND contrasena = ?', [correoInstructor, idInstructor, contrasenaInstructor], (error, eliminar) => {
+            if (error) {
+                console.log(error);
+            } else {
+                conexion.query('DELETE FROM registro WHERE correo = ? AND cedula = ?', [correoAprendiz, idAprendiz], (error, resultado) => {
+                    respuesta.redirect('/');
+                });
+            }
+        });
+    });
+});
+
 // fin insructores
 
 // aprendiz
 
 controlador.zona_registrarAprendiz = ((consulta,respuesta)=> {
-    let registrarse = consulta.body
+    let registrarse = consulta.body;
     console.log(registrarse);
     consulta.getConnection((error,conexion)=>{
         conexion.query ('insert into registro set ?, tipoUsuarios_fk = 2 ',[registrarse],(error,registro)=>{
-            respuesta.redirect("/")
+            respuesta.redirect("/");
         });
     });
 });
