@@ -1,0 +1,21 @@
+<%- include ('partes/_default.ejs') -%>
+    <title>Document</title>
+</head>
+<body>
+    <%- include ('partes/_navegacion.ejs') -%>
+
+    <section class="formularios">
+        <h4>formulario de registro instructor</h4>
+        <form action="/registrarInstructor" method="post" class="formulario">
+            <input class="controls" name="nombre" id="nombre" placeholder="ingrese su nombre" required>
+            <input class="controls" type="text" name="apellido" id="apellido" placeholder="ingrese su apellido" required>
+            <input class="controls" type="number" name="cedula" id="cedula" placeholder="ingrese su cedula" required>
+            <input class="controls" type="email" name="correo" id="correo" placeholder="ingrese su correo" required>
+            <input class="controls" type="tetx" name="curso" id="curso" placeholder="ingrese su curso">
+            <input class="controls" type="password" name="contrasena" id="contrasena" placeholder="ingrese su contraseña" required>
+            <input class="boton_controles" type="submit"value="Registrar">
+        </form>
+        <a href="/inicarInstructor">Ya tengo cuenta</a>
+    </section>
+</body>
+</html>

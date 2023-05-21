@@ -70,3 +70,48 @@
         }
     }
 }
+
+
+.formularios {
+    width: 400px;
+    height: 600px;
+    @include grid-center;
+    margin: 40px auto;
+    @include border;
+    background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+
+    grid-template-rows: 20% 60% 20%;
+
+    h4 {
+        text-align: center;
+    }
+
+    .formulario {
+        @include grid-center;
+        grid-template-rows: auto;
+        grid-template-columns: 400px;
+        row-gap: 10px;
+    }
+
+    .controls {
+        width: 70%;
+        height: 30px;
+        @include border;
+        text-align: center;
+    }
+
+    .boton_controles {
+        border: none;
+        background-color: none;
+        width: 100%;
+        height: 40px;
+        cursor: pointer;
+    }
+
+}
+a {
+    text-decoration: none;
+    &:hover {
+        color: $hover;
+    }
+}

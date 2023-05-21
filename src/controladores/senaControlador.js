@@ -17,5 +17,9 @@ controlador.zona_instructores = (consulta,respuesta)=> {
     respuesta.render('instructores')
 }
 
+controlador.zona_registroInstructor = (consulta,respuesta)=> {
+    respuesta.render('registrarInstructor')
+}
+
 
 module.exports = controlador

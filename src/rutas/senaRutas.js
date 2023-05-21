@@ -9,6 +9,7 @@ const senaControlador = require('../controladores/senaControlador')
 
 rutas.get ('/',senaControlador.zona_Index)
 rutas.get('/instructores',senaControlador.zona_instructores)
+rutas.get('/registroInstructor',senaControlador.zona_registroInstructor)
 
 
 module.exports = rutas

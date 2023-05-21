@@ -155,4 +155,47 @@ body.dark span {
   color: rgb(47, 199, 245);
 }
 
+.formularios {
+  width: 400px;
+  height: 600px;
+  display: grid;
+  place-items: center;
+  place-content: center;
+  margin: 40px auto;
+  border-radius: 40px;
+  background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+  grid-template-rows: 20% 60% 20%;
+}
+.formularios h4 {
+  text-align: center;
+}
+.formularios .formulario {
+  display: grid;
+  place-items: center;
+  place-content: center;
+  grid-template-rows: auto;
+  grid-template-columns: 400px;
+  row-gap: 10px;
+}
+.formularios .controls {
+  width: 70%;
+  height: 30px;
+  border-radius: 40px;
+  text-align: center;
+}
+.formularios .boton_controles {
+  border: none;
+  background-color: none;
+  width: 100%;
+  height: 40px;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+a:hover {
+  color: rgb(47, 199, 245);
+}
+
 /*# sourceMappingURL=style.css.map */
