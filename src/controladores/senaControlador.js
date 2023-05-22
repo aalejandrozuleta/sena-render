@@ -87,10 +87,7 @@ controlador.zona_crearInstructor = (consulta, respuesta) => {
 	let registrarse = consulta.body;
 	console.log(registrarse);
 	consulta.getConnection((error, conexion) => {
-		conexion.query(
-			"insert into registro set ?, tipoUsuarios_fk = 1 ",
-			[registrarse],
-			(error, registro) => {
+		conexion.query("insert into registro set ?, tipoUsuarios_fk = 1 ",[registrarse],(error, registro) => {
 				respuesta.redirect("/");
 			}
 		);
@@ -103,10 +100,7 @@ controlador.zona_iniciar = (consulta, respuesta) => {
 	console.log(correo);
 	console.log(contrasena);
 	consulta.getConnection((error, conexion) => {
-		conexion.query(
-			"select * from registro where correo=? and contrasena=?",
-			[correo, contrasena],
-			(error, registro) => {
+		conexion.query("select * from registro where correo=? and contrasena=?",[correo, contrasena],(error, registro) => {
 				console.log(registro);
 				if (registro.length !== 0) {
 					let correo = consulta.body.correo;
@@ -126,10 +120,7 @@ controlador.zona_eliminar = (consulta, respuesta) => {
 	let id = consulta.body.cedula;
 
 	consulta.getConnection((error, conexion) => {
-		conexion.query(
-			"delete from registro where correo = ? and contrasena = ? and cedula = ?",
-			[correo, contrasena, id],
-			(error, eliminar) => {
+		conexion.query("delete from registro where correo = ? and contrasena = ? and cedula = ?",[correo, contrasena, id],(error, eliminar) => {
 				respuesta.redirect("/");
 			}
 		);
@@ -142,17 +133,11 @@ controlador.zona_cambiarClaves = (consulta, respuesta) => {
 	let contrasena = consulta.body.contrasena;
 
 	consulta.getConnection((error, conexion) => {
-		conexion.query(
-			"SELECT * FROM registro WHERE correo = ? AND cedula = ?",
-			[correo, id],
-			(error, resultadoConsulta) => {
+		conexion.query("SELECT * FROM registro WHERE correo = ? AND cedula = ?",[correo, id],(error, resultadoConsulta) => {
 				if (error) {
 					console.log(error);
 				} else {
-					conexion.query(
-						"UPDATE registro SET contrasena = ? WHERE correo = ? AND cedula = ?",
-						[contrasena, correo, id],
-						(error, resultadoActualizacion) => {
+					conexion.query("UPDATE registro SET contrasena = ? WHERE correo = ? AND cedula = ?",[contrasena, correo, id],(error, resultadoActualizacion) => {
 							respuesta.redirect("/");
 						}
 					);
@@ -171,16 +156,11 @@ controlador.zona_eliminarAprendiz = (consulta, respuesta) => {
 
 	consulta.getConnection((error, conexion) => {
 		conexion.query(
-			"SELECT * from registro WHERE correo = ? AND cedula = ? AND contrasena = ?",
-			[correoInstructor, idInstructor, contrasenaInstructor],
-			(error, eliminar) => {
+			"SELECT * from registro WHERE correo = ? AND cedula = ? AND contrasena = ?",[correoInstructor, idInstructor, contrasenaInstructor],(error, eliminar) => {
 				if (error) {
 					console.log(error);
 				} else {
-					conexion.query(
-						"DELETE FROM registro WHERE correo = ? AND cedula = ?",
-						[correoAprendiz, idAprendiz],
-						(error, resultado) => {
+					conexion.query("DELETE FROM registro WHERE correo = ? AND cedula = ?",[correoAprendiz, idAprendiz],(error, resultado) => {
 							respuesta.redirect("/");
 						}
 					);
@@ -198,10 +178,7 @@ controlador.zona_registrarAprendiz = (consulta, respuesta) => {
 	let registrarse = consulta.body;
 	console.log(registrarse);
 	consulta.getConnection((error, conexion) => {
-		conexion.query(
-			"insert into registro set ?, tipoUsuarios_fk = 2 ",
-			[registrarse],
-			(error, registro) => {
+		conexion.query("insert into registro set ?, tipoUsuarios_fk = 2 ",[registrarse],(error, registro) => {
 				respuesta.redirect("/");
 			}
 		);
@@ -235,9 +212,7 @@ controlador.zona_Horario = (consulta, respuesta) => {
 			respuesta.json(error);
 		}
 		conexion.query(
-			"SELECT * FROM registro WHERE nombre = ? AND curso_fk = ? AND tipoUsuarios_fk = 1",
-			[nombre, curso_fk],
-			(error, resultado) => {
+			"SELECT * FROM registro WHERE nombre = ? AND curso_fk = ? AND tipoUsuarios_fk = 1",[nombre, curso_fk],(error, resultado) => {
 				if (error) {
 					respuesta.json(error);
 				}
@@ -250,9 +225,7 @@ controlador.zona_Horario = (consulta, respuesta) => {
 							if (error) {
 								respuesta.json(error);
 							}
-							conexion.query(
-								"SELECT * FROM cursos",
-								(error, cursos) => {
+							conexion.query("SELECT * FROM cursos",(error, cursos) => {
 									if (error) {
 										respuesta.json(error);
 									}
