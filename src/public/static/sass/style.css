@@ -13,13 +13,22 @@ body.dark {
   color: rgb(255, 255, 255);
 }
 body.dark h1, body.dark h2, body.dark h3, body.dark h4, body.dark h5, body.dark h6 {
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
 }
 body.dark a {
   color: rgb(255, 255, 255);
 }
 body.dark span {
   color: rgb(255, 255, 255);
+}
+body.dark .formularios {
+  background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+}
+body.dark .formularios a {
+  color: rgb(0, 0, 0);
+}
+body.dark .formularios p {
+  color: rgb(0, 0, 0);
 }
 
 .modoNoche {
@@ -157,7 +166,7 @@ body.dark span {
 
 .formularios {
   width: 400px;
-  height: 600px;
+  height: 500px;
   display: grid;
   place-items: center;
   place-content: center;
@@ -168,6 +177,7 @@ body.dark span {
 }
 .formularios h4 {
   text-align: center;
+  text-transform: capitalize;
 }
 .formularios .formulario {
   display: grid;

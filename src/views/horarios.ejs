@@ -1,0 +1,29 @@
+<%- include ('partes/_default.ejs') -%>
+<title>Document</title>
+</head>
+<body>
+    <%- include ('partes/_navegacion.ejs') -%>
+    <section class="formularios">
+        <h4>Iniciar sesión</h4>
+        <form action="/horario" method="post" class="formulario">
+            <input class="controls" type="text" name="nombre" id="nombre" placeholder="Ingrese el nombre del instructor" required>
+            <select name="curso_fk" id="curso_fk" class="seleccionador">
+                <option class="opciones">Ingrese el curso del instructor</option>
+                <% for (let i=0; i < cursos.length; i++) { %>
+                    <option class="opciones" value="<%= cursos[i].id %>">
+                        <%= cursos[i].curso %>
+                    </option>
+                <% } %>
+            </select>
+            <input class="boton_controles" type="submit" value="Iniciar">
+        </form>
+    
+        <% if (typeof horario !== 'undefined') { %>
+            <p><%= horario.dia %> <%= horario.hora %></p>
+        <% } else if (typeof usuario !== 'undefined') { %>
+            <p>Usuario no encontrado</p>
+        <% } %>
+    </section>
+    
+</body>
+</html>

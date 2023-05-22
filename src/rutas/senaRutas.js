@@ -19,11 +19,14 @@ rutas.get ('/retirar',senaControlador.zona_retirar)
 //aprendiz
 rutas.get('/aprendiz',senaControlador.zona_aprendiz)
 rutas.get('/registroAprendiz',senaControlador.zona_registroAprendiz)
+//horarios 
+
 
 //instructores post
 rutas.post('/registrarInstructor',senaControlador.zona_crearInstructor)
 rutas.post('/eliminarInstructor',senaControlador.zona_eliminar)
 rutas.post('/eliminarAprendiz',senaControlador.zona_eliminarAprendiz)
+
 
 // aprendiz post
 rutas.post('/registrarAprendiz',senaControlador.zona_registrarAprendiz)
@@ -31,6 +34,12 @@ rutas.post('/registrarAprendiz',senaControlador.zona_registrarAprendiz)
 // general post
 rutas.post('/cambiarClave',senaControlador.zona_cambiarClaves)
 rutas.post('/iniciarSesion',senaControlador.zona_iniciar)
+
+
+//hoario
+
+rutas.get('/horarios', senaControlador.zona_horarios);
+rutas.post('/horario', senaControlador.zona_Horario);
 
 
 module.exports = rutas

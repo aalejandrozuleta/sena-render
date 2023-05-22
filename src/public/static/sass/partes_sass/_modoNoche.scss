@@ -2,13 +2,23 @@ body.dark {
     background-color: $oscuro;
     color: $letrasOscuro;
     h1, h2, h3, h4, h5, h6 {
-        color:$letrasOscuro;
+        color:$colorLetras;
     }
     & a{
         color:$letrasOscuro;
     }
     span {
         color: $letrasOscuro;
+    }
+
+    .formularios {
+        background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+        a{
+            color: $colorLetras;
+        }
+        p{
+            color: $colorLetras;
+        }
     }
 }
 

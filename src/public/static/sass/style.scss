@@ -74,7 +74,7 @@
 
 .formularios {
     width: 400px;
-    height: 600px;
+    height: 500px;
     @include grid-center;
     margin: 40px auto;
     @include border;
@@ -84,6 +84,7 @@
 
     h4 {
         text-align: center;
+        text-transform: capitalize;
     }
 
     .formulario {
